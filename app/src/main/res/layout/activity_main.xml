@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="JJEvent Demo" />
+
+    <Button
+        android:id="@+id/btn_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="点击事件" />
+
+    <Button
+        android:id="@+id/btn_push"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_event"
+        android:layout_centerHorizontal="true"
+        android:text="主动上报统计" />
+
+    <Button
+        android:id="@+id/btn_pv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_push"
+        android:layout_centerHorizontal="true"
+        android:text="屏幕事件" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_pv"
+        android:layout_centerHorizontal="true"
+        android:text="停止push服务（仍会记录事件,停止事件上报）" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="97dp"
+        android:text="启动和记录过程请看Logcat日志" />
+
+
+</RelativeLayout>
