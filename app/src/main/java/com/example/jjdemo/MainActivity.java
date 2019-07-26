@@ -1,8 +1,11 @@
 package com.example.jjdemo;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,11 +16,10 @@ import com.ccj.client.android.analytics.JJEventManager;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     TextView tv_show;
     Button btn_event, btn_pv, btn_cancel, btn_push;
-    private int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         btn_pv = findViewById(R.id.btn_pv);
         btn_push = findViewById(R.id.btn_push);
         btn_cancel = findViewById(R.id.btn_cancel);
-
 
         /**
          * 点击事件
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 Map ecp = new HashMap();
                 ecp.put("自定义key1", "自定义value1");
                 ecp.put("自定义key2", "自定义value2");
-                JJEvent.trackExpose("ss1", "首页", "点击" + "button" + (++i), ecp);
+                JJEvent.trackExpose("ss1", "首页", "点击" + "button", ecp);
                 JJEventManager.pushEvent();
             }
         });
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 JJEventManager.pushEvent();
-                Toast.makeText(MainActivity.this, "saefsdfasdf-->" + i, Toast.LENGTH_SHORT).show();
             }
         });
     }
